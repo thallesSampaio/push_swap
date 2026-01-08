@@ -3,20 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thasampa <thasampa@student.42.rio>         +#+  +:+       +#+        */
+/*   By: thasampa <thasampa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 13:50:10 by thasampa          #+#    #+#             */
-/*   Updated: 2026/01/07 13:50:28 by thasampa         ###   ########.fr       */
+/*   Updated: 2026/01/08 19:25:57 by thasampa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft/libft.h"
 
-void    print_content(void *content);
+void	print_content(void *content);
+void	error_exit(void);
+int		parse_args(char **args);
 
 int	main(int argc, char *argv[])
 {
+	if (argc < 2)
+		return (0);
+	if (parse_args(argv) == 0)
+		return (0);
+    /*
     t_list  *stack_a;
     t_list  *tmp;
     char    **split;
@@ -47,9 +53,10 @@ int	main(int argc, char *argv[])
     exit(1);
 }
 
-void print_content(void *content)
+void	print_content(void *content)
 {
-    int *n = (int *)content;
-    ft_putnbr_fd(*n, 1);
+	int *n = (int *)content;
+	ft_putnbr_fd(*n, 1);
     ft_putchar_fd('\n', 1);
 }
+*/
