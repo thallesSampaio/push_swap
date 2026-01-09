@@ -6,22 +6,22 @@
 /*   By: thasampa <thasampa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 16:47:16 by thasampa          #+#    #+#             */
-/*   Updated: 2026/01/08 19:14:28 by thasampa         ###   ########.fr       */
+/*   Updated: 2026/01/08 21:18:43 by thasampa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
+int			fill_stack_ints(t_stack *a, char **splited);
 static char	*join_free(char *s1, char *s2);
 void		error_exit(void);
 void		free_split(char **split);
 
-int	parse_args(char **args)
+int	parse_args(t_stack *a, char **args)
 {
 	char	**splited;
 	char	*concat;
-	char	*tmp;
 	int		i;
 
 	i = 0;
@@ -37,12 +37,14 @@ int	parse_args(char **args)
 	free(concat);
 	if (!splited)
 		return (0);
-	i = 0;
-	while (splited[i] != NULL)
+	if (!fill_stack_ints(a, splited))
 	{
-		printf("%s\n", splited[i++]);
+		free_split(splited);
+		stack_clear(a);
+		return (0);
 	}
 	free_split(splited);
+	return (1);
 }
 
 static char	*join_free(char *s1, char *s2)

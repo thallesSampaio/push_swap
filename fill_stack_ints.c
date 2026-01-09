@@ -1,0 +1,38 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fill_stack_ints.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: thasampa <thasampa@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/08 20:54:16 by thasampa          #+#    #+#             */
+/*   Updated: 2026/01/08 21:18:50 by thasampa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
+void	stack_init(t_stack *a);
+int		is_str_valid(char const *s);
+int		is_valid_int(char const *s, int *out);
+int		has_duplicate(t_stack *a, int value);
+void	stack_add_back(t_stack *a, int value);
+
+int	fill_stack_ints(t_stack *a, char **splited)
+{
+	int	i;
+	int	val;
+
+	stack_init(a);
+	i = 0;
+	while (splited[i])
+	{
+		if (!is_str_valid(splited[i]) || !is_valid_int(splited[i], &val))
+			return (0);
+		if (has_duplicate(a, val))
+			return (0);
+		stack_add_back(a, val);
+		i++;
+	}
+	return (1);
+}

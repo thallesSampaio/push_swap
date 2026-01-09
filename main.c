@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thasampa <thasampa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 13:50:10 by thasampa          #+#    #+#             */
-/*   Updated: 2026/01/08 19:25:57 by thasampa         ###   ########.fr       */
+/*   Updated: 2026/01/08 21:27:16 by thasampa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,22 @@
 
 void	print_content(void *content);
 void	error_exit(void);
-int		parse_args(char **args);
+int		parse_args(t_stack *a, char **args);
+void	stack_clear(t_stack *a);
 
 int	main(int argc, char *argv[])
 {
+	t_stack	a;
+
 	if (argc < 2)
 		return (0);
-	if (parse_args(argv) == 0)
-		return (0);
-    /*
+	if (parse_args(&a, argv) == 0)
+		error_exit();
+	print_stack(&a);
+	stack_clear(&a);
+	return (0);
+}
+/*
     t_list  *stack_a;
     t_list  *tmp;
     char    **split;
@@ -37,7 +44,8 @@ int	main(int argc, char *argv[])
         concat = ft_strjoin(concat, argv[i]);
         concat = ft_strjoin(concat, ft_strdup(" "));
         i++;
-    } // recebe argumentos descaralhados, junta tudo identadinho pra splitar depois
+    } // recebe argumentos descaralhados,
+      //  junta tudo identadinho pra splitar depois
     split = ft_split(concat, ' ');
     i = 0;
     stack_a = NULL;
