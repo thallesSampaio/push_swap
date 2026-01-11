@@ -6,16 +6,19 @@
 /*   By: thasampa <thasampa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 13:50:10 by thasampa          #+#    #+#             */
-/*   Updated: 2026/01/08 21:27:16 by thasampa         ###   ########.fr       */
+/*   Updated: 2026/01/11 19:35:12 by thasampa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_content(void *content);
+void	stack_clear(t_stack *a); //remover
+void	print_content(void *content); // remover
 void	error_exit(void);
+void	exit_clear(t_stack *a);
 int		parse_args(t_stack *a, char **args);
-void	stack_clear(t_stack *a);
+int		is_sorted(t_stack *a);
+void	sa(t_stack *a);
 
 int	main(int argc, char *argv[])
 {
@@ -25,46 +28,9 @@ int	main(int argc, char *argv[])
 		return (0);
 	if (parse_args(&a, argv) == 0)
 		error_exit();
-	print_stack(&a);
-	stack_clear(&a);
+	if (is_sorted(&a))
+		exit_clear(&a);
+	print_stack(&a);// remover
+	stack_clear(&a);// remover
 	return (0);
 }
-/*
-    t_list  *stack_a;
-    t_list  *tmp;
-    char    **split;
-    char    *concat;
-    int     i;
-    int     *num;
-
-    i = 1;
-    concat = ft_strdup("");
-    while (i < argc)
-    {
-        concat = ft_strjoin(concat, argv[i]);
-        concat = ft_strjoin(concat, ft_strdup(" "));
-        i++;
-    } // recebe argumentos descaralhados,
-      //  junta tudo identadinho pra splitar depois
-    split = ft_split(concat, ' ');
-    i = 0;
-    stack_a = NULL;
-    while (split[i] != NULL)
-    {
-        num = malloc(sizeof(int));
-        *num = ft_atoi(split[i]);
-        tmp = ft_lstnew(num);
-        ft_lstadd_front(&stack_a, tmp);
-        i++;
-    }//itera sobre todo meu array de strings e passa tudo para uma lista
-    ft_lstiter(stack_a, print_content);
-    exit(1);
-}
-
-void	print_content(void *content)
-{
-	int *n = (int *)content;
-	ft_putnbr_fd(*n, 1);
-    ft_putchar_fd('\n', 1);
-}
-*/

@@ -1,19 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_utils.c                                       :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thasampa <thasampa@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/08 17:57:34 by thasampa          #+#    #+#             */
-/*   Updated: 2026/01/08 17:58:26 by thasampa         ###   ########.fr       */
+/*   Created: 2026/01/11 19:16:33 by thasampa          #+#    #+#             */
+/*   Updated: 2026/01/11 19:19:29 by thasampa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	error_exit(void)
+static void	rotate(t_stack *s)
 {
-	write(2, "Error\n", 6);
-	exit(1);
+	t_node	*first;
+
+	if (!s || s -> size < 2)
+		return ;
+	first = s -> head;
+	s -> head = first -> next;
+	first -> next = NULL;
+	s -> tail -> next = first;
+	s -> tail = first;
+}
+
+void	ra(t_stack *a)
+{
+	rotate(a);
+	write(1, "ra\n", 3);
+}
+
+void	rb(t_stack *b)
+{
+	rotate(b);
+	write(1, "rb\n", 3);
+}
+
+void	rr(t_stack *a, t_stack *b)
+{
+	rotate(a);
+	rotate(b);
+	write(1, "rr\n", 3);
 }

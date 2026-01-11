@@ -6,7 +6,7 @@
 /*   By: thasampa <thasampa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 14:00:00 by thasampa          #+#    #+#             */
-/*   Updated: 2026/01/08 21:31:30 by thasampa         ###   ########.fr       */
+/*   Updated: 2026/01/11 19:32:27 by thasampa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "libft/libft.h"
 # include <limits.h>
+# include <unistd.h>
 
 typedef struct s_node
 {
@@ -50,6 +51,23 @@ int		fill_stack_ints(t_stack *a, char **splited);
 //debug
 void	print_stack(t_stack *a);
 
-//push_utils
+//is_sorted
+int		is_sorted(t_stack *a);
+
+//exit utils
 void	error_exit(void);
+void	error_clear(t_stack *a);
+
+//operations 
+void	sa(t_stack *a);
+void	sb(t_stack *b);
+void	ss(t_stack *a, t_stack *b);
+void	pa(t_stack *a, t_stack *b);
+void	pb(t_stack *a, t_stack *b);
+void	ra(t_stack *a);
+void	rb(t_stack *b);
+void	rr(t_stack *a, t_stack *b);
+void	rra(t_stack *a);
+void	rrb(t_stack *b);
+void	rrr(t_stack *a, t_stack *b);
 #endif
