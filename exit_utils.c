@@ -12,8 +12,6 @@
 
 #include "push_swap.h"
 
-void	stack_clear(t_stack *a);
-
 void	error_exit(void)
 {
 	write(2, "Error\n", 6);

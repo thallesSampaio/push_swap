@@ -32,7 +32,6 @@ typedef struct s_stack
 }	t_stack;
 
 //parse_args
-void	free_split(char **split);
 int		parse_args(t_stack *a, char **args);
 
 //str_validator
@@ -56,7 +55,7 @@ int		is_sorted(t_stack *a);
 
 //exit utils
 void	error_exit(void);
-void	error_clear(t_stack *a);
+void	exit_clear(t_stack *a);
 
 //operations 
 void	sa(t_stack *a);
@@ -77,4 +76,7 @@ void	simple_sort(t_stack *a, t_stack *b);
 //sort_5_utils
 int		find_min_pos(t_stack *a);
 void	bring_pos_to_top(t_stack *a, int pos);
+
+//index_stack
+void	index_stack(t_stack *a);
 #endif

@@ -12,12 +12,6 @@
 
 #include "push_swap.h"
 
-void	stack_init(t_stack *a);
-int		is_str_valid(char const *s);
-int		is_valid_int(char const *s, int *out);
-int		has_duplicate(t_stack *a, int value);
-void	stack_add_back(t_stack *a, int value);
-
 int	fill_stack_ints(t_stack *a, char **splited)
 {
 	int	i;

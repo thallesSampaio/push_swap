@@ -23,7 +23,7 @@ void	print_stack(t_stack *a)
 	printf("Stack A (size = %d):\n", a -> size);
 	while (cur)
 	{
-		printf("[%d] value = %d\n", i, cur -> value);
+		printf("[%d] value = %d\n", cur -> index, cur -> value);
 		cur = cur ->next;
 		i++;
 	}

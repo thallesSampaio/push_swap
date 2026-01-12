@@ -12,17 +12,9 @@
 
 #include "push_swap.h"
 
-void	pa(t_stack *a, t_stack *b);
-void	pb(t_stack *a, t_stack *b);
-void	sa(t_stack *a);
-void	ra(t_stack *a);
-void	rra(t_stack *a);
-int		is_sorted(t_stack *a);
-void	sort_2(t_stack *a);
-void	sort_3(t_stack *a);
-void	sort_5(t_stack *a, t_stack *b);
-void	bring_pos_to_top(t_stack *a, int pos);
-int		find_min_pos(t_stack *a);
+static void	sort_2(t_stack *a);
+static void	sort_3(t_stack *a);
+static void	sort_5(t_stack *a, t_stack *b);
 
 void	simple_sort(t_stack *a, t_stack *b)
 {
@@ -36,7 +28,7 @@ void	simple_sort(t_stack *a, t_stack *b)
 		sort_5(a, b);
 }
 
-void	sort_2(t_stack *a)
+static void	sort_2(t_stack *a)
 {
 	int	x;
 	int	y;
@@ -47,7 +39,7 @@ void	sort_2(t_stack *a)
 		sa(a);
 }
 
-void	sort_3(t_stack *a)
+static void	sort_3(t_stack *a)
 {
 	int	x;
 	int	y;
@@ -74,7 +66,7 @@ void	sort_3(t_stack *a)
 		rra(a);
 }
 
-void	sort_5(t_stack *a, t_stack *b)
+static void	sort_5(t_stack *a, t_stack *b)
 {
 	int	pos;
 

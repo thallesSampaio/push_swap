@@ -13,10 +13,8 @@
 #include "push_swap.h"
 #include <stdio.h>
 
-int			fill_stack_ints(t_stack *a, char **splited);
 static char	*join_free(char *s1, char *s2);
-void		error_exit(void);
-void		free_split(char **split);
+static void	free_split(char **split);
 
 int	parse_args(t_stack *a, char **args)
 {
@@ -58,7 +56,7 @@ static char	*join_free(char *s1, char *s2)
 	return (out);
 }
 
-void	free_split(char **split)
+static void	free_split(char **split)
 {
 	int	i;
 
