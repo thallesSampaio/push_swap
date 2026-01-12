@@ -6,7 +6,7 @@
 /*   By: thasampa <thasampa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 14:00:00 by thasampa          #+#    #+#             */
-/*   Updated: 2026/01/11 19:32:27 by thasampa         ###   ########.fr       */
+/*   Updated: 2026/01/11 21:00:16 by thasampa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,11 @@ void	rr(t_stack *a, t_stack *b);
 void	rra(t_stack *a);
 void	rrb(t_stack *b);
 void	rrr(t_stack *a, t_stack *b);
+
+//simple_sort
+void	simple_sort(t_stack *a, t_stack *b);
+
+//sort_5_utils
+int		find_min_pos(t_stack *a);
+void	bring_pos_to_top(t_stack *a, int pos);
 #endif
