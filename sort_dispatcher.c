@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   simple_sort.c                                      :+:      :+:    :+:   */
+/*   sort_dispatcher.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thasampa <thasampa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/11 20:18:44 by thasampa          #+#    #+#             */
-/*   Updated: 2026/01/11 21:08:47 by thasampa         ###   ########.fr       */
+/*   Updated: 2026/01/12 22:04:56 by thasampa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	sort_2(t_stack *a);
 static void	sort_3(t_stack *a);
 static void	sort_5(t_stack *a, t_stack *b);
 
-void	simple_sort(t_stack *a, t_stack *b)
+void	sort_dispatcher(t_stack *a, t_stack *b)
 {
 	if (!a || a -> size < 2 || is_sorted(a))
 		return ;
@@ -26,6 +26,11 @@ void	simple_sort(t_stack *a, t_stack *b)
 		sort_3(a);
 	else if (a -> size <= 5)
 		sort_5(a, b);
+	else
+	{
+		index_stack(a);
+		radix_sort(a, b);
+	}
 }
 
 static void	sort_2(t_stack *a)

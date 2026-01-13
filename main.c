@@ -6,7 +6,7 @@
 /*   By: thasampa <thasampa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 13:50:10 by thasampa          #+#    #+#             */
-/*   Updated: 2026/01/11 21:01:30 by thasampa         ###   ########.fr       */
+/*   Updated: 2026/01/12 22:01:48 by thasampa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,8 @@ int	main(int argc, char *argv[])
 		error_exit();
 	if (is_sorted(&a))
 		exit_clear(&a);
-	simple_sort(&a, &b);
-	index_stack(&a);
-	print_stack(&a);// remover
-	stack_clear(&a);// remover
+	sort_dispatcher(&a, &b);
+	stack_clear(&a);
+	stack_clear(&b);
 	return (0);
 }
