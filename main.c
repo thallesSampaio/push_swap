@@ -20,7 +20,7 @@ int	main(int argc, char *argv[])
 	stack_init(&a);
 	stack_init(&b);
 	if (argc < 2)
-		return (0);
+		exit(1);
 	if (parse_args(&a, argv) == 0)
 		error_exit();
 	if (is_sorted(&a))

@@ -18,6 +18,8 @@ int	fill_stack_ints(t_stack *a, char **splited)
 	int	val;
 
 	i = 0;
+	if (!splited || splited[0] == NULL)
+		return (0);
 	while (splited[i])
 	{
 		if (!is_str_valid(splited[i]) || !is_valid_int(splited[i], &val))
