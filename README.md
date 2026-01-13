@@ -36,12 +36,14 @@ This will generate the executable:
 ```bash
 ./push_swap
 ```
-Execution
+### Execution
 
 Run the program by passing a list of integers as arguments:
 ```bash
 
-./push_swap 3 2 1 | ./push_swap "3 2 1" | ./push_swap "3" 2 "1"
+./push_swap 3 2 1 
+./push_swap "3 2 1"
+./push_swap "3" 2 "1"
 ```
 The program outputs a sequence of operations (sa, pb, ra, etc.) that will sort the
 numbers.
@@ -117,7 +119,7 @@ AI assistance (ChatGPT) was used as a learning and support tool during developme
     Understanding algorithmic strategies (radix sort, small-case optimizations).
 
     Reviewing edge cases.
-	
+
     Assisting with documentation (README structure and clarity).
 
 All implementation decisions, code writing, and final validations were performed by the

@@ -6,12 +6,11 @@
 /*   By: thasampa <thasampa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 16:47:16 by thasampa          #+#    #+#             */
-/*   Updated: 2026/01/11 13:29:28 by thasampa         ###   ########.fr       */
+/*   Updated: 2026/01/13 01:09:59 by thasampa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 static char	*join_free(char *s1, char *s2);
 static void	free_split(char **split);

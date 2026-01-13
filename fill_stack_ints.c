@@ -6,7 +6,7 @@
 /*   By: thasampa <thasampa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 20:54:16 by thasampa          #+#    #+#             */
-/*   Updated: 2026/01/08 21:18:50 by thasampa         ###   ########.fr       */
+/*   Updated: 2026/01/13 01:17:52 by thasampa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	fill_stack_ints(t_stack *a, char **splited)
 	int	i;
 	int	val;
 
-	stack_init(a);
 	i = 0;
 	while (splited[i])
 	{
