@@ -6,7 +6,7 @@
 /*   By: thasampa <thasampa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 14:00:00 by thasampa          #+#    #+#             */
-/*   Updated: 2026/01/12 21:40:48 by thasampa         ###   ########.fr       */
+/*   Updated: 2026/01/12 22:40:11 by thasampa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,6 @@ void	stack_init(t_stack *a);
 
 //fill_stack_ints
 int		fill_stack_ints(t_stack *a, char **splited);
-
-//debug
-void	print_stack(t_stack *a);
 
 //is_sorted
 int		is_sorted(t_stack *a);
